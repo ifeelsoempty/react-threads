@@ -1,56 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import { ClearOutlined, ReloadOutlined } from "@ant-design/icons";
+import "./App.css";
+import ReplyForm from "./Components/ReplyForm";
+import ThreadsList from "./Components/ThreadsList";
+import { useAppDispatch } from "./helpers/hooks";
+import {
+  createThread,
+  clearThreads,
+  restoreThreadsMock,
+} from "./store/threadSlice";
 
 function App() {
+  const dispatch = useAppDispatch();
+
+  const handleReply = (payload: { text: string; name: string }) => {
+    dispatch(createThread(payload));
+  };
+  const handleClear = () => {
+    dispatch(clearThreads());
+  };
+  const handleRestore = () => {
+    dispatch(restoreThreadsMock());
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+    <div className="wallContainer">
+      <div className="wallInterface">
+        <ReloadOutlined className="icon restoreIcon" onClick={handleRestore} />
+        <ClearOutlined className="icon clearIcon" onClick={handleClear} />
+      </div>
+      <ReplyForm onReply={handleReply} />
+      <ThreadsList />
     </div>
   );
 }

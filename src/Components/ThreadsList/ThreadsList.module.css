@@ -1,0 +1,6 @@
+.threadsList .thread:first-child {
+  margin-top: 10px;
+}
+.thread {
+  margin-top: 25px;
+}

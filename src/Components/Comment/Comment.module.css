@@ -1,0 +1,62 @@
+.comment {
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+}
+
+.commentText {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 5px;
+  word-wrap: break-word;
+  font-weight: 300;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.interactionElements {
+  margin-left: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.name {
+  margin-left: 10px;
+  font-weight: 500;
+}
+
+.avatar {
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.contentBox {
+  display: flex;
+  justify-content: stretch;
+}
+
+.content {
+  width: 100%;
+}
+
+.divider {
+  align-self: stretch;
+  min-width: 2px;
+  background: gray;
+  opacity: 0.2;
+  margin: 5px 12px 3px 12px;
+  transition: 0.25s;
+}
+.divider:hover {
+  background: rgb(40, 90, 200);
+  opacity: 1;
+}
+
+.child {
+  margin-top: 5px;
+}

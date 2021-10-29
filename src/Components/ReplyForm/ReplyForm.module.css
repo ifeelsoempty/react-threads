@@ -1,0 +1,62 @@
+.replyForm {
+  margin-top: 10px;
+}
+
+.buttonsContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button {
+  padding: 5px 50px;
+  margin-left: 5px;
+  transition: 0.25s;
+  border: 0;
+  background: transparent;
+}
+
+.button:hover {
+  border: 1px solid rgb(40, 90, 200);
+  color: rgb(40, 90, 200);
+  cursor: pointer;
+}
+
+.inputBox {
+  margin-top: 10px;
+}
+
+.input {
+  border: 1px solid rgba(185, 185, 185, 0.4);
+  width: 100%;
+  padding: 5px;
+  margin-top: 5px;
+  transition: 0.25s;
+  resize: none;
+}
+
+.input:focus {
+  outline: none;
+  border: 1px solid rgb(0, 0, 0);
+}
+
+.greenButton {
+  border: none;
+  background: rgba(56, 216, 24, 0.6);
+  color: white;
+}
+.greenButton:hover {
+  border: none;
+  opacity: 0.5;
+  color: white;
+}
+
+.redButton {
+  border: none;
+  background: rgba(214, 39, 39, 0.6);
+  color: white;
+}
+.redButton:hover {
+  border: none;
+  opacity: 0.5;
+  color: white;
+}
